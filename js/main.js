@@ -1,6 +1,9 @@
 // USER LOGIN / SIGNUP
+
+// Declared global variable
 let users
 
+// Assign users based on local storage
 if (localStorage.getItem("users") === null){
   users = [];
 } else {
