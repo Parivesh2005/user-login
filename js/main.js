@@ -1,8 +1,10 @@
 // USER LOGIN / SIGNUP
+let users
 
-let users = JSON.parse(localStorage.getItem("users"));
-if (users === null){
+if (localStorage.getItem("users") === null){
   users = [];
+} else {
+  users = JSON.parse(localStorage.getItem("users"));
 }
 
 // HTML VARIABLES
@@ -30,7 +32,7 @@ function signUpHandler() {
       users.push({'name': userName, 'password': password});
       localStorage.setItem("users", JSON.stringify(users));
       alert("Signup Success");
-    } else {
+    } if (userAlreadyExists == true){
       alert("Username already exists");
     }
   } else {
